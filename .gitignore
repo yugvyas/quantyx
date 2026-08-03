@@ -1,5 +1,6 @@
 # Build artifacts — regenerate with `dbt build`, never commit.
 quantyx.duckdb
+quantyx_ci.duckdb
 quantyx.duckdb.wal
 dbt/target/
 dbt/logs/

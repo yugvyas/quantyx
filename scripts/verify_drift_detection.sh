@@ -25,7 +25,7 @@ fail() { printf '\n  FAILED: %s\n' "$1" >&2; exit 1; }
 
 run_dbt_test() {
     # Returns 0 if the named test PASSES, 1 if it FAILS.
-    (cd "$DBT_DIR" && "$DBT" test --profiles-dir . \
+    (cd "$DBT_DIR" && "$DBT" test --profiles-dir . --target ci \
         --select "$1" --vars "{data_dir: $2}" --quiet) >/dev/null 2>&1
 }
 
@@ -59,7 +59,7 @@ with gzip.GzipFile(filename="", mode="wb", fileobj=open(path, "wb"), mtime=0) as
 print(f"  simulated collapse: {len(rows)} -> {len(kept)} observations")
 PY
 
-(cd "$DBT_DIR" && "$DBT" run --profiles-dir . --vars "{data_dir: $COLLAPSE}" --quiet) \
+(cd "$DBT_DIR" && "$DBT" run --profiles-dir . --target ci --vars "{data_dir: $COLLAPSE}" --quiet) \
     >/dev/null 2>&1 || fail "models would not even build on collapsed data"
 
 if run_dbt_test assert_volume_not_collapsed "$COLLAPSE"; then
@@ -95,7 +95,7 @@ with gzip.GzipFile(filename="", mode="wb", fileobj=open(path, "wb"), mtime=0) as
 print(f"  simulated dead source: dropped {victim!r} ({counts[victim]} rows)")
 PY
 
-(cd "$DBT_DIR" && "$DBT" run --profiles-dir . --vars "{data_dir: $MISSING}" --quiet) \
+(cd "$DBT_DIR" && "$DBT" run --profiles-dir . --target ci --vars "{data_dir: $MISSING}" --quiet) \
     >/dev/null 2>&1 || fail "models would not build with a missing source"
 
 if run_dbt_test assert_no_source_disappeared "$MISSING"; then
@@ -106,7 +106,7 @@ printf '  ok  assert_no_source_disappeared correctly failed\n'
 # --------------------------------------------------------------------------
 # Control: the same tests must PASS on healthy data, or they are just noise.
 # --------------------------------------------------------------------------
-(cd "$DBT_DIR" && "$DBT" run --profiles-dir . --vars "{data_dir: $SAMPLE}" --quiet) \
+(cd "$DBT_DIR" && "$DBT" run --profiles-dir . --target ci --vars "{data_dir: $SAMPLE}" --quiet) \
     >/dev/null 2>&1 || fail "models do not build on the clean sample dataset"
 
 run_dbt_test assert_volume_not_collapsed "$SAMPLE" \

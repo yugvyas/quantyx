@@ -3,9 +3,21 @@
 quantyx:
   target: dev
   outputs:
+    # Production/local: the file the dashboard reads.
     dev:
       type: duckdb
       path: "../quantyx.duckdb"
+      threads: 4
+      extensions:
+        - json
+
+    # Scratch target for builds against sample or deliberately-corrupted data.
+    # Without this, `dbt build --vars '{data_dir: ../tests/sample_data}'` would
+    # overwrite the real database and the dashboard would quietly start showing
+    # fixture data.
+    ci:
+      type: duckdb
+      path: "../quantyx_ci.duckdb"
       threads: 4
       extensions:
         - json

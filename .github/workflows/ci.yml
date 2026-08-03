@@ -22,10 +22,10 @@ jobs:
       - run: pip install -r requirements-dev.txt
 
       - name: Lint
-        run: ruff check pipeline tests
+        run: ruff check pipeline tests scripts
 
       - name: Format check
-        run: ruff format --check pipeline tests
+        run: ruff format --check pipeline tests scripts
 
       - name: Tests
         # Fixtures only — CI must never depend on a third party's uptime, or on
@@ -47,7 +47,7 @@ jobs:
       - name: Build and test against the committed sample dataset
         working-directory: dbt
         run: |
-          dbt build --profiles-dir . \
+          dbt build --profiles-dir . --target ci \
             --vars '{data_dir: ../tests/sample_data}' \
             --fail-fast
 
@@ -71,7 +71,7 @@ jobs:
 
       - name: Build marts for the dashboard to read
         working-directory: dbt
-        run: dbt build --profiles-dir . --vars '{data_dir: ../tests/sample_data}'
+        run: dbt build --profiles-dir . --target ci --vars '{data_dir: ../tests/sample_data}'
 
       - uses: actions/setup-node@v4
         with:
