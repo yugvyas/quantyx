@@ -45,8 +45,8 @@ order by posting_count desc
 Skills are detected by matching a curated dictionary of ~110 regular
 expressions against each posting's title and description. Every number here
 traces back to a pattern you can read in
-[`dbt/seeds/skills_dictionary.csv`](https://github.com/) — there is no model
-guessing in the loop.
+[`dbt/seeds/skills_dictionary.csv`](https://github.com/yugvyas/quantyx/blob/main/dbt/seeds/skills_dictionary.csv)
+— there is no model guessing in the loop.
 
 ## Most requested skills
 

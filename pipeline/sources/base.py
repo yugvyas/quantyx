@@ -21,7 +21,7 @@ T = TypeVar("T")
 
 # Identify ourselves honestly. These are public APIs used as intended, and a
 # contactable UA is what separates a good citizen from an anonymous bot.
-CONTACT_URL = os.getenv("QUANTYX_CONTACT_URL", "https://github.com/quantyx")
+CONTACT_URL = os.getenv("QUANTYX_CONTACT_URL", "https://github.com/yugvyas/quantyx")
 USER_AGENT = f"quantyx-job-pipeline/0.1 (+{CONTACT_URL})"
 
 DEFAULT_TIMEOUT = httpx.Timeout(20.0, connect=10.0)
