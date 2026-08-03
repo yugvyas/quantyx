@@ -1,0 +1,52 @@
+appearance:
+  default: system
+  switcher: true
+
+theme:
+  colorPalettes:
+    # Categorical slots, assigned in fixed order and never cycled.
+    #
+    # Evidence's stock palette fails four accessibility checks — notably a
+    # normal-vision separation of dE 7.3 between two of its blues (floor is 15),
+    # meaning two series are hard to tell apart even with full colour vision.
+    # This set is validated in both modes: worst adjacent CVD dE 9.1 light /
+    # 8.4 dark, worst adjacent normal-vision dE 19.6 light / 19.3 dark.
+    #
+    # The dark column is the same eight hues re-stepped for the dark surface,
+    # not an automatic flip.
+    default:
+      light:
+        - "#2a78d6" # blue
+        - "#eb6834" # orange
+        - "#1baf7a" # aqua
+        - "#eda100" # yellow
+        - "#e87ba4" # magenta
+        - "#008300" # green
+        - "#4a3aa7" # violet
+        - "#e34948" # red
+      dark:
+        - "#3987e5"
+        - "#d95926"
+        - "#199e70"
+        - "#c98500"
+        - "#d55181"
+        - "#008300"
+        - "#9085e9"
+        - "#e66767"
+  colorScales:
+    # Sequential = one hue, light to dark. Never a rainbow.
+    default:
+      light:
+        - "#cde2fb"
+        - "#0d366b"
+      dark:
+        - "#cde2fb"
+        - "#0d366b"
+
+plugins:
+  components:
+    "@evidence-dev/core-components": {}
+  datasources:
+    # DuckDB only. The template ships a dozen connectors; carrying the ones we
+    # never use would triple install time in CI for nothing.
+    "@evidence-dev/duckdb": {}

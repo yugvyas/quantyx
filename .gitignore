@@ -1,0 +1,29 @@
+# Build artifacts — regenerate with `dbt build`, never commit.
+quantyx.duckdb
+quantyx.duckdb.wal
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+# Machine-specific anonymous id dbt writes on first run.
+dbt/.user.yml
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+
+# Dashboard
+dashboard/node_modules/
+dashboard/build/
+dashboard/.evidence/template/
+dashboard/.evidence/meta/
+dashboard/static/data/
+dashboard/.svelte-kit/
+
+# OS
+.DS_Store

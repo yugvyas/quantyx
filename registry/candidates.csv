@@ -1,0 +1,272 @@
+company,ats,slug,hq_country
+# Candidate ATS boards. Not all of these resolve — run
+#   python -m pipeline.validate_registry --input registry/candidates.csv \
+#       --prune-to registry/companies.csv --min-jobs 1
+# to keep only the boards that actually exist. Add freely; dead rows are free.
+Razorpay,greenhouse,razorpay,IN
+Swiggy,greenhouse,swiggy,IN
+Zomato,greenhouse,zomato,IN
+Meesho,greenhouse,meesho,IN
+CRED,greenhouse,cred,IN
+Groww,greenhouse,groww,IN
+Zerodha,greenhouse,zerodha,IN
+PhonePe,greenhouse,phonepe,IN
+Flipkart,greenhouse,flipkart,IN
+Dream11,greenhouse,dream11,IN
+ShareChat,greenhouse,sharechat,IN
+Postman,greenhouse,postman,IN
+Freshworks,greenhouse,freshworks,IN
+BrowserStack,greenhouse,browserstack,IN
+InMobi,greenhouse,inmobi,IN
+Delhivery,greenhouse,delhivery,IN
+Lenskart,greenhouse,lenskart,IN
+Nykaa,greenhouse,nykaa,IN
+Paytm,greenhouse,paytm,IN
+Myntra,greenhouse,myntra,IN
+Unacademy,greenhouse,unacademy,IN
+Chargebee,greenhouse,chargebee,IN
+Hasura,greenhouse,hasura,IN
+CleverTap,greenhouse,clevertap,IN
+MindTickle,greenhouse,mindtickle,IN
+Whatfix,greenhouse,whatfix,IN
+Darwinbox,greenhouse,darwinbox,IN
+Innovaccer,greenhouse,innovaccer,IN
+Gupshup,greenhouse,gupshup,IN
+Sprinklr,greenhouse,sprinklr,IN
+Druva,greenhouse,druva,IN
+ThoughtSpot,greenhouse,thoughtspot,IN
+Fractal Analytics,greenhouse,fractal,IN
+Tredence,greenhouse,tredence,IN
+Practo,greenhouse,practo,IN
+PharmEasy,greenhouse,pharmeasy,IN
+Zetwerk,greenhouse,zetwerk,IN
+Uniphore,greenhouse,uniphore,IN
+Atlan,greenhouse,atlan,IN
+Databricks,greenhouse,databricks,US
+Stripe,greenhouse,stripe,US
+Airbnb,greenhouse,airbnb,US
+Dropbox,greenhouse,dropbox,US
+Cloudflare,greenhouse,cloudflare,US
+DoorDash,greenhouse,doordash,US
+Coinbase,greenhouse,coinbase,US
+Reddit,greenhouse,reddit,US
+Robinhood,greenhouse,robinhood,US
+Pinterest,greenhouse,pinterest,US
+Twilio,greenhouse,twilio,US
+Datadog,greenhouse,datadog,US
+Samsara,greenhouse,samsara,US
+Asana,greenhouse,asana,US
+Figma,greenhouse,figma,US
+Notion,greenhouse,notion,US
+Grammarly,greenhouse,grammarly,US
+Discord,greenhouse,discord,US
+Confluent,greenhouse,confluent,US
+MongoDB,greenhouse,mongodb,US
+Elastic,greenhouse,elastic,US
+GitLab,greenhouse,gitlab,US
+Snowflake,greenhouse,snowflake,US
+HashiCorp,greenhouse,hashicorp,US
+Plaid,greenhouse,plaid,US
+Brex,greenhouse,brex,US
+Instacart,greenhouse,instacart,US
+Lyft,greenhouse,lyft,US
+Affirm,greenhouse,affirm,US
+Wealthfront,greenhouse,wealthfront,US
+Chime,greenhouse,chime,US
+Unity,greenhouse,unity,US
+Roblox,greenhouse,roblox,US
+Anthropic,greenhouse,anthropic,US
+Scale AI,greenhouse,scaleai,US
+Zscaler,greenhouse,zscaler,US
+Nutanix,greenhouse,nutanix,US
+Rubrik,greenhouse,rubrik,US
+Cohesity,greenhouse,cohesity,US
+Netskope,greenhouse,netskope,US
+Okta,greenhouse,okta,US
+Twitch,greenhouse,twitch,US
+Yelp,greenhouse,yelp,US
+Zendesk,greenhouse,zendesk,US
+Wise,greenhouse,wise,GB
+Revolut,greenhouse,revolut,GB
+Monzo,greenhouse,monzo,GB
+Deliveroo,greenhouse,deliveroo,GB
+Spotify,greenhouse,spotify,SE
+Klarna,greenhouse,klarna,SE
+Zeta,lever,zeta,IN
+MoEngage,lever,moengage,IN
+Khatabook,lever,khatabook,IN
+Jupiter,lever,jupiter,IN
+Slice,lever,slice,IN
+BharatPe,lever,bharatpe,IN
+Cars24,lever,cars24,IN
+Spinny,lever,spinny,IN
+Zepto,lever,zepto,IN
+Dunzo,lever,dunzo,IN
+Exotel,lever,exotel,IN
+Netradyne,lever,netradyne,IN
+Turing,lever,turing,US
+Netflix,lever,netflix,US
+Box,lever,box,US
+Quora,lever,quora,US
+Eventbrite,lever,eventbrite,US
+Mixpanel,lever,mixpanel,US
+Coursera,lever,coursera,US
+Udemy,lever,udemy,US
+23andMe,lever,23andme,US
+Blend,lever,blend,US
+KeepTruckin,lever,keeptruckin,US
+Attentive,lever,attentive,US
+Benchling,lever,benchling,US
+Cohere,lever,cohere,CA
+Shopify,lever,shopify,CA
+Faire,lever,faire,US
+Verkada,lever,verkada,US
+Nuro,lever,nuro,US
+Ripple,lever,ripple,US
+Palantir,lever,palantir,US
+Linear,ashby,linear,US
+Vanta,ashby,vanta,US
+Ramp,ashby,ramp,US
+Deel,ashby,deel,US
+Mercury,ashby,mercury,US
+Replit,ashby,replit,US
+Hex,ashby,hex,US
+Retool,ashby,retool,US
+Clerk,ashby,clerk,US
+Resend,ashby,resend,US
+Perplexity AI,ashby,perplexity,US
+Together AI,ashby,togetherai,US
+Modal,ashby,modal,US
+Baseten,ashby,baseten,US
+Weights & Biases,ashby,wandb,US
+Harvey,ashby,harvey,US
+Sierra,ashby,sierra,US
+Glean,ashby,glean,US
+Anysphere,ashby,anysphere,US
+Supabase,ashby,supabase,US
+Neon,ashby,neon,US
+PostHog,ashby,posthog,GB
+Sourcegraph,ashby,sourcegraph,US
+Warp,ashby,warp,US
+Zip,ashby,zip,US
+Watershed,ashby,watershed,US
+Census,ashby,census,US
+Airbyte,ashby,airbyte,US
+Dagster,ashby,dagsterlabs,US
+Prefect,ashby,prefect,US
+Astronomer,ashby,astronomer,US
+dbt Labs,ashby,dbtlabs,US
+Fivetran,ashby,fivetran,US
+Sigma Computing,ashby,sigmacomputing,US
+Omni,ashby,omni,US
+Motherduck,ashby,motherduck,US
+Swiggy,greenhouse,bundltechnologies,IN
+Zomato,greenhouse,eternal,IN
+CRED,greenhouse,dreamplug,IN
+Navi,greenhouse,navi,IN
+Sarvam AI,greenhouse,sarvamai,IN
+Krutrim,greenhouse,krutrim,IN
+Ola,greenhouse,olacabs,IN
+Ola Electric,greenhouse,olaelectric,IN
+PhysicsWallah,greenhouse,physicswallah,IN
+Cult.fit,greenhouse,cultfit,IN
+Urban Company,greenhouse,urbancompany,IN
+BigBasket,greenhouse,bigbasket,IN
+Blinkit,greenhouse,blinkit,IN
+Juspay,greenhouse,juspay,IN
+Cashfree,greenhouse,cashfree,IN
+Setu,greenhouse,setu,IN
+M2P Fintech,greenhouse,m2pfintech,IN
+Perfios,greenhouse,perfios,IN
+Signzy,greenhouse,signzy,IN
+Keka,greenhouse,keka,IN
+Springworks,greenhouse,springworks,IN
+Zoho,greenhouse,zoho,IN
+Kissflow,greenhouse,kissflow,IN
+Wingify,greenhouse,wingify,IN
+LambdaTest,greenhouse,lambdatest,IN
+Testsigma,greenhouse,testsigma,IN
+Appsmith,greenhouse,appsmith,IN
+Tracxn,greenhouse,tracxn,IN
+Quantiphi,greenhouse,quantiphi,IN
+LatentView,greenhouse,latentview,IN
+Tiger Analytics,greenhouse,tiganalytics,IN
+Sigmoid,greenhouse,sigmoid,IN
+Gramener,greenhouse,gramener,IN
+Cropin,greenhouse,cropin,IN
+Qure.ai,greenhouse,qureai,IN
+Haptik,greenhouse,haptik,IN
+Yellow.ai,greenhouse,yellowai,IN
+Verloop,greenhouse,verloop,IN
+Observe.AI,greenhouse,observeai,IN
+Gnani.ai,greenhouse,gnani,IN
+MathCo,greenhouse,themathcompany,IN
+Mu Sigma,greenhouse,musigma,IN
+Sprinto,greenhouse,sprinto,IN
+Zluri,greenhouse,zluri,IN
+Rupeek,greenhouse,rupeek,IN
+Turtlemint,greenhouse,turtlemint,IN
+Vymo,greenhouse,vymo,IN
+Locus,greenhouse,locus,IN
+Shiprocket,greenhouse,shiprocket,IN
+Porter,greenhouse,porter,IN
+Sarvam AI,ashby,sarvamai,IN
+Composio,ashby,composio,IN
+Portkey,ashby,portkey,IN
+Dashtoon,ashby,dashtoon,IN
+Atlan,ashby,atlan,IN
+Hasura,ashby,hasura,IN
+Rippling,ashby,rippling,US
+Notion,ashby,notion,US
+OpenAI,ashby,openai,US
+Anduril,ashby,anduril,US
+Figma,ashby,figma,US
+Scale AI,ashby,scaleai,US
+Cursor,ashby,cursor,US
+ElevenLabs,ashby,elevenlabs,GB
+Runway,ashby,runwayml,US
+Hugging Face,ashby,huggingface,US
+Weights & Biases,ashby,weightsandbiases,US
+LangChain,ashby,langchain,US
+Pinecone,ashby,pinecone,US
+Weaviate,ashby,weaviate,NL
+ClickHouse,ashby,clickhouse,US
+Grafana Labs,ashby,grafanalabs,US
+Temporal,ashby,temporal,US
+Render,ashby,render,US
+Railway,ashby,railway,US
+Deno,ashby,deno,US
+Turso,ashby,turso,US
+Meesho,lever,meesho,IN
+Razorpay,lever,razorpay,IN
+Sharechat,lever,sharechat,IN
+Groww,lever,groww,IN
+Rebel Foods,lever,rebelfoods,IN
+Dream11,lever,dreamsports,IN
+Games24x7,lever,games24x7,IN
+MPL,lever,mpl,IN
+Chargebee,lever,chargebee,IN
+Whatfix,lever,whatfix,IN
+MindTickle,lever,mindtickle,IN
+Innovaccer,lever,innovaccer,IN
+Fractal,lever,fractalanalytics,IN
+Uniphore,lever,uniphore,IN
+Netcore,lever,netcorecloud,IN
+CleverTap,lever,clevertap,IN
+Simpl,lever,getsimpl,IN
+Jupiter Money,lever,jupitermoney,IN
+Fi Money,lever,fimoney,IN
+Zolve,lever,zolve,IN
+Wint Wealth,lever,wintwealth,IN
+Leadsquared,lever,leadsquared,IN
+Darwinbox,lever,darwinbox,IN
+Eightfold AI,lever,eightfold,US
+Instabase,lever,instabase,US
+Applied Intuition,lever,appliedintuition,US
+Anyscale,lever,anyscale,US
+Voleon,lever,voleon,US
+Hudson River Trading,lever,hudsonrivertrading,US
+Jane Street,lever,janestreet,US
+Two Sigma,lever,twosigma,US
+Millennium,lever,millennium,US
+Point72,lever,point72,US

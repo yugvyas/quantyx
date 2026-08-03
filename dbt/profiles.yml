@@ -1,0 +1,11 @@
+# Kept in-project (rather than ~/.dbt) so the repo is self-contained and CI
+# needs no setup step. Run dbt with --profiles-dir . from the dbt/ directory.
+quantyx:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../quantyx.duckdb"
+      threads: 4
+      extensions:
+        - json

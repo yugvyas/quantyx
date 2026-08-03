@@ -1,0 +1,6 @@
+name: quantyx
+type: duckdb
+options:
+  # The dbt build writes this file to the repo root. It is a build artifact,
+  # not source — regenerate it with `dbt build` rather than committing it.
+  filename: ../../../quantyx.duckdb

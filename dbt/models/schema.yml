@@ -1,0 +1,144 @@
+version: 2
+
+models:
+  - name: stg_postings
+    description: >
+      All posting records read directly from the gzipped JSONL partitions.
+      union_by_name lets new fields appear in later partitions without
+      breaking the read of older ones.
+    columns:
+      - name: posting_key
+        description: "source:posting_id — stable identity across runs."
+        tests: [not_null]
+      - name: source
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["adzuna", "greenhouse", "lever", "ashby"]
+      - name: title
+        tests: [not_null]
+      - name: first_seen_date
+        description: Derived from the partition folder name, not from row data.
+        tests: [not_null]
+
+  - name: stg_observations
+    description: One row per posting per day it was still open.
+    columns:
+      - name: posting_key
+        tests: [not_null]
+      - name: observed_date
+        tests: [not_null]
+      - name: source
+        tests:
+          - accepted_values:
+              values: ["adzuna", "greenhouse", "lever", "ashby"]
+
+  - name: int_postings_lifespan
+    description: One row per posting with first/last sighting and days_open.
+    columns:
+      - name: posting_key
+        tests: [unique, not_null]
+
+  - name: int_posting_skills
+    description: Long-format posting x skill tags from the regex dictionary.
+    columns:
+      - name: posting_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fct_postings')
+              field: posting_key
+      - name: canonical_skill
+        tests: [not_null]
+
+  - name: fct_postings
+    description: One row per posting. The grain every mart joins to.
+    columns:
+      - name: posting_key
+        tests: [unique, not_null]
+      - name: source
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["adzuna", "greenhouse", "lever", "ashby"]
+      - name: seniority
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["intern", "new_grad", "junior", "mid_plus", "unknown"]
+      - name: comp_period
+        tests:
+          - accepted_values:
+              values: ["hour", "day", "week", "month", "year"]
+      - name: title
+        tests: [not_null]
+      - name: company
+        tests: [not_null]
+      - name: is_active
+        tests: [not_null]
+      - name: days_open
+        tests: [not_null]
+
+  - name: agg_skill_frequency
+    description: Skill demand counts, overall and by slice.
+    columns:
+      - name: canonical_skill
+        tests: [unique, not_null]
+
+  - name: agg_skill_trends
+    description: Skill demand over time as a share of postings open that day.
+    columns:
+      - name: observed_date
+        tests: [not_null]
+      - name: canonical_skill
+        tests: [not_null]
+
+  - name: agg_compensation
+    description: >
+      Pay distributions grouped by currency AND period. Never blended across
+      them — an INR/month stipend and a USD/year salary are not comparable.
+    columns:
+      - name: comp_currency
+        tests: [not_null]
+      - name: comp_period
+        tests: [not_null]
+
+  - name: agg_market_daily
+    description: Daily open/new counts and the remote / India / seniority mix.
+    columns:
+      - name: observed_date
+        tests: [unique, not_null]
+
+  - name: agg_company_activity
+    description: Per-company hiring volume and time-to-close.
+
+  - name: agg_pipeline_stats
+    description: >
+      Verifiable dataset size figures. These are what the README badge quotes,
+      so that any claim about scale can be checked by re-running the build.
+
+seeds:
+  - name: skills_dictionary
+    description: >
+      Hand-curated skill regexes. Patterns are \b-anchored because DuckDB uses
+      RE2 and unanchored "sql" matches inside "MySQL"/"GraphQL". RE2 has no
+      lookahead, so patterns must not use any.
+    columns:
+      - name: canonical_skill
+        tests: [unique, not_null]
+      - name: pattern
+        tests: [not_null]
+      - name: category
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - language
+                - library
+                - ml_framework
+                - data_engineering
+                - cloud
+                - mlops
+                - database
+                - bi_viz
+                - technique

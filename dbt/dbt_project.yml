@@ -1,0 +1,44 @@
+name: quantyx
+version: "0.1.0"
+config-version: 2
+
+profile: quantyx
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Where the raw gzipped JSONL partitions live, relative to this directory.
+  # CI overrides this to point at the committed sample dataset:
+  #   dbt build --vars '{data_dir: ../tests/sample_data}'
+  data_dir: "../data"
+
+  # The volume-collapse test no-ops until this much history exists, so a new
+  # repo does not fail its own pipeline on day one.
+  drift_min_history_days: 7
+
+  # Fail the build if today's observation count falls below this fraction of
+  # the trailing average — the signal that a source broke or changed shape.
+  drift_min_ratio: 0.5
+
+models:
+  quantyx:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  quantyx:
+    skills_dictionary:
+      +column_types:
+        canonical_skill: varchar
+        category: varchar
+        pattern: varchar

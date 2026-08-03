@@ -1,0 +1,155 @@
+name: Daily pipeline
+
+on:
+  schedule:
+    # 02:30 UTC = 08:00 IST, after most Indian companies post overnight.
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_deploy:
+        description: "Run the pipeline but do not publish the dashboard"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+# Never let two runs write the same partition concurrently.
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: "3.12"
+  NODE_VERSION: "22"
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    outputs:
+      deployable: ${{ steps.build_site.outcome == 'success' }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          # A PAT is strongly preferred over GITHUB_TOKEN here. GitHub disables
+          # scheduled workflows on public repos after 60 days with no *user*
+          # activity, and commits made with GITHUB_TOKEN do not reset that
+          # clock — the cron would silently stop and the "always fresh" promise
+          # would quietly break. Commits made with a PAT do count.
+          token: ${{ secrets.PIPELINE_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch postings
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          QUANTYX_CONTACT_URL: https://github.com/${{ github.repository }}
+        run: python -m pipeline.run
+
+      - name: Commit raw data
+        run: |
+          git config user.name  "quantyx-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No new raw data to commit."
+          else
+            git commit -m "data: pipeline run $(date -u +%Y-%m-%d)"
+          fi
+
+      - name: Build and test dbt models
+        working-directory: dbt
+        run: |
+          dbt build --profiles-dir . --fail-fast
+
+      - name: Refresh README statistics
+        run: python -m pipeline.stats
+
+      - name: Commit README statistics
+        run: |
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "README already current."
+          else
+            git commit -m "docs: refresh pipeline statistics"
+          fi
+
+      - name: Push
+        run: git push
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: dashboard/package-lock.json
+
+      - name: Install dashboard dependencies
+        working-directory: dashboard
+        run: npm ci
+
+      - name: Build dashboard
+        id: build_site
+        working-directory: dashboard
+        env:
+          # Required for a GitHub Pages *project* site. Without it every asset
+          # resolves against the domain root and 404s.
+          EVIDENCE_BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build:strict
+
+      - name: Upload Pages artifact
+        if: ${{ !inputs.skip_deploy }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/build
+
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          # Reuse a single rolling issue rather than opening one per failed day.
+          existing=$(gh issue list --label pipeline-failure --state open \
+                       --json number --jq '.[0].number')
+          body="The daily pipeline failed on $(date -u +%Y-%m-%d).
+
+          Run: $RUN_URL
+
+          The dashboard was **not** redeployed, so the last good version is
+          still live. Common causes: an upstream API changed shape, a board
+          token went stale, or the drift tests caught a volume collapse."
+
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "Daily pipeline failure" \
+              --label pipeline-failure --body "$body"
+          fi
+
+  deploy:
+    # Only runs when `pipeline` fully succeeded — which means dbt build AND all
+    # drift tests passed. A failed run leaves the previous dashboard live.
+    needs: pipeline
+    if: ${{ success() && !inputs.skip_deploy }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

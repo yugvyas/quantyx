@@ -1,0 +1,43 @@
+name: Registry health
+
+on:
+  schedule:
+    # Weekly. Company boards go stale quietly — a dead slug just contributes
+    # zero postings forever, which looks identical to "they aren't hiring".
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Validate every ATS board still resolves
+        id: validate
+        env:
+          QUANTYX_CONTACT_URL: https://github.com/${{ github.repository }}
+        run: |
+          python -m pipeline.validate_registry | tee registry-report.txt
+          echo "dead=$(grep -cE '^  (not_found|error)' registry-report.txt || true)" >> "$GITHUB_OUTPUT"
+
+      - name: Open an issue if boards have died
+        if: steps.validate.outputs.dead != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Registry health: ${{ steps.validate.outputs.dead }} dead board(s)" \
+            --label registry \
+            --body "$(printf 'Weekly check found dead entries in \`registry/companies.csv\`.\n\n```\n%s\n```\n\nFix by re-running discovery:\n\n```\npython -m pipeline.validate_registry --input registry/candidates.csv \\\n  --prune-to registry/companies.csv --min-jobs 1\n```\n' "$(cat registry-report.txt)")"

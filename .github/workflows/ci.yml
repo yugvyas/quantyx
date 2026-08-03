@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: ruff check pipeline tests
+
+      - name: Format check
+        run: ruff format --check pipeline tests
+
+      - name: Tests
+        # Fixtures only — CI must never depend on a third party's uptime, or on
+        # some company happening to have a job open that day.
+        run: pytest tests/ -q
+
+  dbt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build and test against the committed sample dataset
+        working-directory: dbt
+        run: |
+          dbt build --profiles-dir . \
+            --vars '{data_dir: ../tests/sample_data}' \
+            --fail-fast
+
+      - name: Verify drift tests actually catch a broken run
+        # A test that has never failed is not evidence of anything. This proves
+        # the tripwire fires, so the deploy gate is real rather than decorative.
+        working-directory: dbt
+        run: ../scripts/verify_drift_detection.sh
+
+  dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build marts for the dashboard to read
+        working-directory: dbt
+        run: dbt build --profiles-dir . --vars '{data_dir: ../tests/sample_data}'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: dashboard/package-lock.json
+
+      - run: npm ci
+        working-directory: dashboard
+
+      - name: Build dashboard
+        working-directory: dashboard
+        run: npm run build:strict
