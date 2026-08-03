@@ -52,6 +52,14 @@ One chart per pay basis, each on its own axis. Putting them on a shared axis
 would be the same mistake as blending them: an INR/month figure and a USD/year
 figure against one scale invites a comparison the data does not support.
 
+{#if pay_bases.length === 0}
+
+> No postings with advertised pay yet. Most employers do not publish a salary,
+> and Adzuna's machine-predicted figures are discarded at ingest rather than
+> shown as employer-stated pay.
+
+{/if}
+
 {#each pay_bases as basis}
 
 ### {basis.pay_basis}

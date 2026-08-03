@@ -29,6 +29,8 @@ limit 20
 
 ## Most active employers
 
+{#if top_companies.length > 0}
+
 <BarChart
     data={top_companies}
     x=company
@@ -36,6 +38,8 @@ limit 20
     swapXY=true
     yAxisTitle="Data/AI postings tracked"
 />
+
+{/if}
 
 ## How long roles stay open
 
