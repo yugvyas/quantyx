@@ -31,3 +31,7 @@ ignore = [
 testpaths = ["tests"]
 addopts = "-q"
 filterwarnings = ["error::DeprecationWarning"]
+# Required so a bare `pytest` can import `pipeline`. Running `python -m pytest`
+# happens to work without this because that form puts the CWD on sys.path —
+# which is exactly how this stayed hidden locally while failing in CI.
+pythonpath = ["."]

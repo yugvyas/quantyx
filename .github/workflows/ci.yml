@@ -71,10 +71,15 @@ jobs:
 
       - name: Build marts for the dashboard to read
         working-directory: dbt
+        # Deliberately the default `dev` target, unlike the dbt job above.
+        # The `ci` target exists to stop a sample-data build from overwriting
+        # a real local database — a fresh runner has none, and Evidence's
+        # connection points at the dev target's file.
+        #
         # Block scalar, not a plain one: a plain YAML scalar cannot contain
         # ": " and `--vars '{data_dir: ...}'` does.
         run: |
-          dbt build --profiles-dir . --target ci \
+          dbt build --profiles-dir . \
             --vars '{data_dir: ../tests/sample_data}'
 
       - uses: actions/setup-node@v4
