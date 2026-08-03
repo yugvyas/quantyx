@@ -128,13 +128,19 @@ python -m pipeline.run                       # real run, writes partitions
 cd dbt && dbt build --profiles-dir .         # transform + test
 python -m pipeline.stats                     # refresh the README block above
 
-cd dashboard && npm install && npm run dev   # dashboard at localhost:3000
+cd dashboard && npm install
+npm run sources && npm run dev               # dashboard at localhost:3000/quantyx
 ```
+
+Two things that bite if skipped: `evidence build` does **not** materialize
+sources, so `npm run sources` must run first on a clean checkout; and the dev
+server lives under `/quantyx` because `deployment.basePath` is set for GitHub
+Pages (plain `localhost:3000` redirects there).
 
 ### Useful commands
 
 ```bash
-pytest tests/                                   # 117 tests, no network
+pytest tests/                                   # 124 tests, no network
 ruff check pipeline tests scripts               # lint
 scripts/verify_drift_detection.sh               # prove the deploy gate works
 python -m pipeline.validate_registry            # find dead company boards
@@ -184,7 +190,7 @@ data/         the dataset itself, append-only          (gzipped JSONL)
 dbt/          staging → intermediate → marts + tests   (SQL)
 dashboard/    Evidence.dev site                        (Markdown + SQL)
 scripts/      sample-data generation, gate verification
-tests/        117 tests + real API fixtures            (pytest)
+tests/        124 tests + real API fixtures            (pytest)
 ```
 
 ## Licence

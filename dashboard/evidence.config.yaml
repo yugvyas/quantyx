@@ -2,6 +2,14 @@ appearance:
   default: system
   switcher: true
 
+deployment:
+  # GitHub Pages serves a *project* site under /<repo>, so every asset URL
+  # must be prefixed. Evidence 40 reads this from the config file — the
+  # EVIDENCE_BASE_PATH environment variable is NOT honoured, which produces a
+  # site that returns 200 but renders completely unstyled because every
+  # /_app/... request 404s.
+  basePath: /quantyx
+
 theme:
   colorPalettes:
     # Categorical slots, assigned in fixed order and never cycled.
