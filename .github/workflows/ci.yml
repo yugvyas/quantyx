@@ -91,6 +91,14 @@ jobs:
       - run: npm ci
         working-directory: dashboard
 
+      - name: Materialize Evidence sources
+        working-directory: dashboard
+        # `evidence build` does NOT run sources — it consumes parquet left by a
+        # previous `evidence sources`. On a developer machine that cache exists
+        # under .evidence/, so the build appears to work; a fresh checkout has
+        # nothing and every query fails with "table does not exist".
+        run: npm run sources
+
       - name: Build dashboard
         working-directory: dashboard
         run: npm run build:strict
