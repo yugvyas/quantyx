@@ -71,7 +71,11 @@ jobs:
 
       - name: Build marts for the dashboard to read
         working-directory: dbt
-        run: dbt build --profiles-dir . --target ci --vars '{data_dir: ../tests/sample_data}'
+        # Block scalar, not a plain one: a plain YAML scalar cannot contain
+        # ": " and `--vars '{data_dir: ...}'` does.
+        run: |
+          dbt build --profiles-dir . --target ci \
+            --vars '{data_dir: ../tests/sample_data}'
 
       - uses: actions/setup-node@v4
         with:
