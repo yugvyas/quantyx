@@ -140,7 +140,7 @@ Pages (plain `localhost:3000` redirects there).
 ### Useful commands
 
 ```bash
-pytest tests/                                   # 124 tests, no network
+pytest tests/                                   # 126 tests, no network
 ruff check pipeline tests scripts               # lint
 scripts/verify_drift_detection.sh               # prove the deploy gate works
 python -m pipeline.validate_registry            # find dead company boards
@@ -190,7 +190,7 @@ data/         the dataset itself, append-only          (gzipped JSONL)
 dbt/          staging → intermediate → marts + tests   (SQL)
 dashboard/    Evidence.dev site                        (Markdown + SQL)
 scripts/      sample-data generation, gate verification
-tests/        124 tests + real API fixtures            (pytest)
+tests/        126 tests + real API fixtures            (pytest)
 ```
 
 ## Licence

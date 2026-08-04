@@ -86,8 +86,13 @@ class AdzunaSource(SourceAdapter):
         max_calls: int = 24,
         max_days_old: int = 7,
     ) -> None:
-        self.app_id = app_id or os.getenv("ADZUNA_APP_ID", "")
-        self.app_key = app_key or os.getenv("ADZUNA_APP_KEY", "")
+        # Strip whitespace: pasting a key into a secrets form or .env very
+        # easily carries a trailing newline, which httpx then URL-encodes into
+        # the query string as %0A. Adzuna happens to tolerate that today, but
+        # it is a silent time-bomb — the request looks correct in logs while
+        # the credential is subtly wrong.
+        self.app_id = (app_id or os.getenv("ADZUNA_APP_ID", "")).strip()
+        self.app_key = (app_key or os.getenv("ADZUNA_APP_KEY", "")).strip()
         self.queries = queries
         self.max_calls = max_calls
         self.max_days_old = max_days_old

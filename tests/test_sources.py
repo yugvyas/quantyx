@@ -226,3 +226,24 @@ def test_parsers_reject_identity_less_rows(raw, acme):
 def test_adzuna_source_skips_cleanly_without_credentials():
     source = adzuna.AdzunaSource(app_id="", app_key="")
     assert source.configured is False
+
+
+def test_adzuna_strips_whitespace_from_credentials(monkeypatch):
+    """A key pasted with a trailing newline must not reach the query string.
+
+    httpx URL-encodes it to %0A, which looks fine in logs while quietly
+    corrupting the credential.
+    """
+    monkeypatch.setenv("ADZUNA_APP_ID", "  abc123\n")
+    monkeypatch.setenv("ADZUNA_APP_KEY", "\ndef456  ")
+
+    source = adzuna.AdzunaSource()
+
+    assert source.app_id == "abc123"
+    assert source.app_key == "def456"
+    assert source.configured is True
+
+
+def test_adzuna_whitespace_only_credentials_count_as_unset():
+    source = adzuna.AdzunaSource(app_id="   ", app_key="\n")
+    assert source.configured is False
