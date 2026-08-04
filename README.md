@@ -37,6 +37,12 @@ _Regenerated automatically on every pipeline run (last: 2026-08-04)._
 
 ## How it works
 
+> **New here?** [`explainer/`](explainer/) is the long-form write-up: why each
+> decision went the way it did, and the bugs that shaped it. Start with
+> [what this is and why](explainer/01-what-and-why.md), or jump straight to
+> [bugs worth reading](explainer/09-bugs-worth-reading.md).
+
+
 ```
                   ┌──────────┐  ┌────────────┐  ┌───────┐  ┌───────┐
    daily cron ──► │  Adzuna  │  │ Greenhouse │  │ Lever │  │ Ashby │
