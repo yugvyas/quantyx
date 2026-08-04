@@ -1,0 +1,372 @@
+/* ===================================================================
+   quantyx — mission-control console
+   Seed 30ac0dbd. The world is an institutional operations console:
+   matte panel metal, engraved placards, hairline scale rules, and
+   status lamps that mean one thing each.
+   Not a terminal. No scanlines, no glow-green-on-black, no ASCII.
+   =================================================================== */
+
+:root {
+  /* Panel */
+  --panel-void: #0a0f11; /* deepest, behind everything */
+  --panel: #101619; /* console face */
+  --panel-raised: #172024; /* a module set into the face */
+  --panel-inset: #0c1214; /* a recessed well */
+  --rule: #24343a; /* engraved hairline */
+  --rule-strong: #354a52;
+
+  /* Ink */
+  --ink: #e6edef; /* primary legend */
+  --ink-dim: #9fb2b9; /* secondary legend — 7.5:1 on --panel-raised, where prose sits */
+  --ink-faint: #6e848c; /* scale ticks, units */
+
+  /* Lamps. Reserved. Never used as chart series. */
+  --lamp-nominal: #46c08a;
+  --lamp-caution: #e8a33d;
+  --lamp-fault: #e8615a;
+  --lamp-off: #2c3a40;
+
+  --placard: 0.6875rem;
+  --tracking-placard: 0.14em;
+
+  --font-placard: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-readout: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}
+
+/* Evidence syncs the active appearance onto html[data-theme]; it sets no
+   class and no data-appearance attribute. Targeting anything else leaves the
+   daylight register as dead code that the switcher can never reach. */
+:root[data-theme='light'] {
+  /* The daylight register: a printed plot board, not an inverted panel.
+     The three ground values are stepped further apart than a naive light
+     theme would space them, because "a module bolted into the console face"
+     is carried by that separation in dark and was collapsing to a single 1px
+     rule in light. */
+  --panel-void: #d7dde0;
+  --panel: #e8ecee;
+  --panel-raised: #ffffff;
+  --panel-inset: #dde3e6;
+  --rule: #b6c1c6;
+  --rule-strong: #83949b;
+
+  --ink: #12191c;
+  --ink-dim: #47585f; /* 7.4:1 on --panel-raised, where prose sits */
+  --ink-faint: #6b7a80;
+
+  --lamp-nominal: #157f4f;
+  --lamp-caution: #8a5a00;
+  --lamp-fault: #b3261e;
+  --lamp-off: #c3ccd0;
+}
+
+/* -------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------- */
+
+body {
+  background-color: var(--panel-void);
+  color: var(--ink);
+  font-family: var(--font-placard);
+  font-feature-settings: "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Engraved placard label. The one repeated typographic gesture of the
+   world: small, tracked capitals, cut into the panel. */
+.placard {
+  font-family: var(--font-placard);
+  font-size: var(--placard);
+  font-weight: 600;
+  letter-spacing: var(--tracking-placard);
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* Every number on this site is a readout: tabular, aligned, machine-set. */
+.readout {
+  font-family: var(--font-readout);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* -------------------------------------------------------------------
+   Console chrome
+   ------------------------------------------------------------------- */
+
+.console-shell {
+  min-height: 100vh;
+  background:
+    /* faint vertical machining on the panel face */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 3px,
+      color-mix(in srgb, var(--rule) 18%, transparent) 3px 4px
+    ),
+    var(--panel);
+}
+
+.console-rail {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--panel-inset);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.console-frame {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* A module bolted into the console face. */
+.module {
+  background: var(--panel-raised);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+/* A recessed well — where live values sit. */
+.well {
+  background: var(--panel-inset);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #000 40%, transparent);
+}
+
+:root[data-theme='light'] .well {
+  box-shadow: inset 0 1px 2px color-mix(in srgb, #000 8%, transparent);
+}
+
+/* Engraved section rule with its placard cut into it. */
+.engraved-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-block: 3rem 1rem;
+}
+.engraved-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rule-strong), transparent);
+}
+
+/* -------------------------------------------------------------------
+   Evidence surface overrides
+   ------------------------------------------------------------------- */
+
+.markdown {
+  color: var(--ink);
+  font-family: var(--font-placard);
+  max-width: none;
+}
+
+.markdown p {
+  color: var(--ink-dim);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  max-width: 68ch; /* measure */
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-family: var(--font-placard);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Evidence renders the frontmatter title as h1.title. On the deep pages that
+   is the real page heading, so it becomes the station designation: engraved
+   into a rule the way a console labels a panel. */
+h1.title {
+  font-family: var(--font-placard);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 1.75rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--rule-strong);
+  position: relative;
+}
+
+h1.title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--lamp-caution);
+}
+
+.markdown a {
+  color: var(--ink);
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+.markdown a:hover {
+  text-decoration-color: currentColor;
+}
+
+.markdown strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.markdown code {
+  font-family: var(--font-readout);
+  font-size: 0.8125em;
+  background: var(--panel-inset);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.1em 0.35em;
+  color: var(--ink);
+}
+
+/* Blockquotes are how the pages state their limits. In this world they are
+   a caution placard, not a decorative left bar. */
+.markdown blockquote {
+  border: 1px solid var(--rule);
+  border-left: 1px solid var(--lamp-caution);
+  background: var(--panel-inset);
+  border-radius: 2px;
+  padding: 0.875rem 1.125rem;
+  margin-block: 1.5rem;
+  font-style: normal;
+}
+.markdown blockquote p {
+  color: var(--ink-dim);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Tables read as printed data listings. */
+.markdown table,
+table {
+  font-family: var(--font-readout);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Markdown tables default to centered, rule-less cells, which sat oddly beside
+   the ruled DataTables on the same page. Align them to the same listing. */
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1.25rem;
+}
+
+.markdown th,
+.markdown td {
+  text-align: left !important;
+  padding: 0.55rem 0.875rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.markdown thead th {
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.markdown tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+thead tr {
+  border-bottom: 1px solid var(--rule-strong) !important;
+}
+th {
+  font-family: var(--font-placard) !important;
+  font-size: var(--placard) !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--tracking-placard) !important;
+  text-transform: uppercase !important;
+  color: var(--ink-dim) !important;
+}
+td {
+  color: var(--ink) !important;
+  border-color: var(--rule) !important;
+}
+tbody tr:hover {
+  background: var(--panel-inset) !important;
+}
+
+/* Evidence's DataTable lives in .table-container. The markdown-table rules
+   above were leaking into it and adding 20px of leading, which stacked with
+   the engraved rule's margin into the largest interval on the page. */
+.table-container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.table-container table {
+  margin-block: 0 !important;
+}
+
+/* Charts sit in the panel, not on white paper. */
+.echarts-wrapper,
+.chart-container {
+  background: transparent !important;
+}
+
+/* Evidence search/input controls, rebuilt as console controls. */
+input[type="text"],
+input[type="search"] {
+  background: var(--panel-inset) !important;
+  border: 1px solid var(--rule-strong) !important;
+  border-radius: 2px !important;
+  color: var(--ink) !important;
+  font-family: var(--font-readout) !important;
+  font-size: 0.8125rem !important;
+}
+input[type="text"]::placeholder,
+input[type="search"]::placeholder {
+  color: var(--ink-faint) !important;
+}
+input[type="text"]:focus,
+input[type="search"]:focus {
+  outline: 2px solid var(--lamp-caution) !important;
+  outline-offset: 1px;
+  border-color: var(--rule-strong) !important;
+}
+
+/* Keyboard focus is a lamp, and always visible. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--lamp-caution);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------
+   Motion — one authored moment: the panel powering on, top to bottom.
+   Content is visible by default; this only animates the arrival.
+   ------------------------------------------------------------------- */
+
+@keyframes power-on {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.power-on {
+  animation: power-on 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .power-on {
+    animation: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

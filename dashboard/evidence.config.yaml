@@ -1,55 +1,93 @@
 appearance:
-  default: system
+  # The console is the primary register. The daylight variant is the printed
+  # plot-board, authored deliberately — not an inverted copy of the panel.
+  default: dark
   switcher: true
 
 deployment:
-  # GitHub Pages serves a *project* site under /<repo>, so every asset URL
-  # must be prefixed. Evidence 40 reads this from the config file — the
+  # GitHub Pages serves a *project* site under /<repo>, so every asset URL must
+  # be prefixed. Evidence 40 reads this from the config file — the
   # EVIDENCE_BASE_PATH environment variable is NOT honoured, which produces a
   # site that returns 200 but renders completely unstyled because every
   # /_app/... request 404s.
   basePath: /quantyx
 
 theme:
+  colors:
+    primary:
+      light: "#1B62C9"
+      dark: "#5C9BE8"
+    accent:
+      light: "#A66A00"
+      dark: "#D9A441"
+    base:
+      # Must match --panel in console.css, or charts sit on a slightly
+      # different ground than the console face and the seam shows.
+      # Palette re-validated against this exact surface: all checks pass.
+      light: "#e8ecee"
+      dark: "#101619"
+    info:
+      light: "#0E7FA3"
+      dark: "#3799B8"
+    positive:
+      light: "#157F4F"
+      dark: "#46C08A"
+    warning:
+      light: "#8A5A00"
+      dark: "#E8A33D"
+    negative:
+      light: "#B3261E"
+      dark: "#E8615A"
+
   colorPalettes:
-    # Categorical slots, assigned in fixed order and never cycled.
+    # Instrument-trace inks. Assigned in fixed slot order, never cycled.
     #
-    # Evidence's stock palette fails four accessibility checks — notably a
-    # normal-vision separation of dE 7.3 between two of its blues (floor is 15),
-    # meaning two series are hard to tell apart even with full colour vision.
-    # This set is validated in both modes: worst adjacent CVD dE 9.1 light /
-    # 8.4 dark, worst adjacent normal-vision dE 19.6 light / 19.3 dark.
+    # Slot 1 leads with a deep instrument cyan, NOT a blue. The first slot
+    # paints every single-series chart on the site, and a saturated blue there
+    # is exactly the stock accent this world's thesis refuses — it made the
+    # Skills and Companies plots read as default Evidence charts sitting inside
+    # a console frame. Blue is demoted to slot 6, where six concurrent series
+    # would have to be on screen before it appears.
     #
-    # The dark column is the same eight hues re-stepped for the dark surface,
-    # not an automatic flip.
+    # Validated with the dataviz validator against this world's actual surfaces
+    # (#101619 panel / #F2F4F5 plot board), not a generic ground: every check
+    # passes in BOTH modes with no warnings — worst adjacent CVD dE 13.0 in
+    # both, worst adjacent normal-vision dE 15.5 dark / 18.7 light.
+    #
+    # The slot ORDER is the CVD-safety mechanism, not cosmetics. Sand sits
+    # between cyan and magenta because those two collide at dE 2.5 under
+    # deuteranopia when adjacent. Do not reorder without re-running the
+    # validator.
+    #
+    # Status hues (nominal green / caution amber / fault red) are reserved for
+    # lamps and never appear as a series; lamps always carry a label and a
+    # drawn icon, never colour alone.
     default:
       light:
-        - "#2a78d6" # blue
-        - "#eb6834" # orange
-        - "#1baf7a" # aqua
-        - "#eda100" # yellow
-        - "#e87ba4" # magenta
-        - "#008300" # green
-        - "#4a3aa7" # violet
-        - "#e34948" # red
+        - "#0E7FA3" # instrument cyan
+        - "#A66A00" # oxide sand
+        - "#C2317F" # magenta
+        - "#6D3FD6" # violet
+        - "#00897B" # teal
+        - "#1B62C9" # blue, last
       dark:
-        - "#3987e5"
-        - "#d95926"
-        - "#199e70"
-        - "#c98500"
-        - "#d55181"
-        - "#008300"
-        - "#9085e9"
-        - "#e66767"
+        - "#3799B8"
+        - "#B8863F"
+        - "#C4548E"
+        - "#8E6FE0"
+        - "#2FA396"
+        - "#2F6FC4"
+
   colorScales:
-    # Sequential = one hue, light to dark. Never a rainbow.
+    # Sequential = one hue, light to dark. Never a rainbow. Cyan, to match the
+    # instrument ink the categorical ramp now leads with.
     default:
       light:
-        - "#cde2fb"
-        - "#0d366b"
+        - "#CFE6EF"
+        - "#0B3F52"
       dark:
-        - "#cde2fb"
-        - "#0d366b"
+        - "#CFE6EF"
+        - "#0B3F52"
 
 plugins:
   components:

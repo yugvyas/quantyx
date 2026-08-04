@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-04T19:18:59Z",
+  "title": "Design System: quantyx",
+  "extensions": {
+    "colorMeta": {
+      "panel-void": {
+        "role": "neutral",
+        "displayName": "Panel Void",
+        "canonical": "oklch(16.4% 0.009 224.1)",
+        "daylight": "#d7dde0",
+        "tonalRamp": [
+          "oklch(15% 0.009 224.1)",
+          "oklch(26% 0.009 224.1)",
+          "oklch(38% 0.009 224.1)",
+          "oklch(49% 0.009 224.1)",
+          "oklch(61% 0.009 224.1)",
+          "oklch(72% 0.009 224.1)",
+          "oklch(84% 0.009 224.1)",
+          "oklch(95% 0.009 224.1)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Console Face",
+        "canonical": "oklch(19.5% 0.011 229.6)",
+        "daylight": "#e8ecee",
+        "tonalRamp": [
+          "oklch(15% 0.011 229.6)",
+          "oklch(26% 0.011 229.6)",
+          "oklch(38% 0.011 229.6)",
+          "oklch(49% 0.011 229.6)",
+          "oklch(61% 0.011 229.6)",
+          "oklch(72% 0.011 229.6)",
+          "oklch(84% 0.011 229.6)",
+          "oklch(95% 0.011 229.6)"
+        ]
+      },
+      "panel-raised": {
+        "role": "neutral",
+        "displayName": "Raised Module",
+        "canonical": "oklch(23.7% 0.015 226.8)",
+        "daylight": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.015 226.8)",
+          "oklch(26% 0.015 226.8)",
+          "oklch(38% 0.015 226.8)",
+          "oklch(49% 0.015 226.8)",
+          "oklch(61% 0.015 226.8)",
+          "oklch(72% 0.015 226.8)",
+          "oklch(84% 0.015 226.8)",
+          "oklch(95% 0.015 226.8)"
+        ]
+      },
+      "panel-inset": {
+        "role": "neutral",
+        "displayName": "Recessed Well",
+        "canonical": "oklch(17.7% 0.010 220.1)",
+        "daylight": "#dde3e6",
+        "tonalRamp": [
+          "oklch(15% 0.010 220.1)",
+          "oklch(26% 0.010 220.1)",
+          "oklch(38% 0.010 220.1)",
+          "oklch(49% 0.010 220.1)",
+          "oklch(61% 0.010 220.1)",
+          "oklch(72% 0.010 220.1)",
+          "oklch(84% 0.010 220.1)",
+          "oklch(95% 0.010 220.1)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Engraved Hairline",
+        "canonical": "oklch(31.3% 0.024 223.1)",
+        "daylight": "#b6c1c6",
+        "tonalRamp": [
+          "oklch(15% 0.024 223.1)",
+          "oklch(26% 0.024 223.1)",
+          "oklch(38% 0.024 223.1)",
+          "oklch(49% 0.024 223.1)",
+          "oklch(61% 0.024 223.1)",
+          "oklch(72% 0.024 223.1)",
+          "oklch(84% 0.024 223.1)",
+          "oklch(95% 0.024 223.1)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Structural Edge",
+        "canonical": "oklch(39.5% 0.029 223.4)",
+        "daylight": "#83949b",
+        "tonalRamp": [
+          "oklch(15% 0.029 223.4)",
+          "oklch(26% 0.029 223.4)",
+          "oklch(38% 0.029 223.4)",
+          "oklch(49% 0.029 223.4)",
+          "oklch(61% 0.029 223.4)",
+          "oklch(72% 0.029 223.4)",
+          "oklch(84% 0.029 223.4)",
+          "oklch(95% 0.029 223.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Primary Legend",
+        "canonical": "oklch(94.1% 0.008 216.6)",
+        "daylight": "#12191c",
+        "tonalRamp": [
+          "oklch(15% 0.008 216.6)",
+          "oklch(26% 0.008 216.6)",
+          "oklch(38% 0.008 216.6)",
+          "oklch(49% 0.008 216.6)",
+          "oklch(61% 0.008 216.6)",
+          "oklch(72% 0.008 216.6)",
+          "oklch(84% 0.008 216.6)",
+          "oklch(95% 0.008 216.6)"
+        ]
+      },
+      "ink-dim": {
+        "role": "neutral",
+        "displayName": "Secondary Legend",
+        "canonical": "oklch(75.1% 0.023 221.9)",
+        "daylight": "#47585f",
+        "tonalRamp": [
+          "oklch(15% 0.023 221.9)",
+          "oklch(26% 0.023 221.9)",
+          "oklch(38% 0.023 221.9)",
+          "oklch(49% 0.023 221.9)",
+          "oklch(61% 0.023 221.9)",
+          "oklch(72% 0.023 221.9)",
+          "oklch(84% 0.023 221.9)",
+          "oklch(95% 0.023 221.9)"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Scale Ink",
+        "canonical": "oklch(59.9% 0.028 221.9)",
+        "daylight": "#6b7a80",
+        "tonalRamp": [
+          "oklch(15% 0.028 221.9)",
+          "oklch(26% 0.028 221.9)",
+          "oklch(38% 0.028 221.9)",
+          "oklch(49% 0.028 221.9)",
+          "oklch(61% 0.028 221.9)",
+          "oklch(72% 0.028 221.9)",
+          "oklch(84% 0.028 221.9)",
+          "oklch(95% 0.028 221.9)"
+        ]
+      },
+      "lamp-nominal": {
+        "role": "tertiary",
+        "displayName": "Nominal Green",
+        "canonical": "oklch(72.6% 0.135 160.8)",
+        "daylight": "#157f4f",
+        "tonalRamp": [
+          "oklch(15% 0.135 160.8)",
+          "oklch(26% 0.135 160.8)",
+          "oklch(38% 0.135 160.8)",
+          "oklch(49% 0.135 160.8)",
+          "oklch(61% 0.135 160.8)",
+          "oklch(72% 0.135 160.8)",
+          "oklch(84% 0.135 160.8)",
+          "oklch(95% 0.135 160.8)"
+        ]
+      },
+      "lamp-caution": {
+        "role": "primary",
+        "displayName": "Caution Amber",
+        "canonical": "oklch(76.5% 0.140 72.9)",
+        "daylight": "#8a5a00",
+        "tonalRamp": [
+          "oklch(15% 0.140 72.9)",
+          "oklch(26% 0.140 72.9)",
+          "oklch(38% 0.140 72.9)",
+          "oklch(49% 0.140 72.9)",
+          "oklch(61% 0.140 72.9)",
+          "oklch(72% 0.140 72.9)",
+          "oklch(84% 0.140 72.9)",
+          "oklch(95% 0.140 72.9)"
+        ]
+      },
+      "lamp-fault": {
+        "role": "tertiary",
+        "displayName": "Fault Red",
+        "canonical": "oklch(66.2% 0.169 25.7)",
+        "daylight": "#b3261e",
+        "tonalRamp": [
+          "oklch(15% 0.169 25.7)",
+          "oklch(26% 0.169 25.7)",
+          "oklch(38% 0.169 25.7)",
+          "oklch(49% 0.169 25.7)",
+          "oklch(61% 0.169 25.7)",
+          "oklch(72% 0.169 25.7)",
+          "oklch(84% 0.169 25.7)",
+          "oklch(95% 0.169 25.7)"
+        ]
+      },
+      "lamp-off": {
+        "role": "tertiary",
+        "displayName": "Lamp Off",
+        "canonical": "oklch(33.8% 0.021 225.9)",
+        "daylight": "#c3ccd0",
+        "tonalRamp": [
+          "oklch(15% 0.021 225.9)",
+          "oklch(26% 0.021 225.9)",
+          "oklch(38% 0.021 225.9)",
+          "oklch(49% 0.021 225.9)",
+          "oklch(61% 0.021 225.9)",
+          "oklch(72% 0.021 225.9)",
+          "oklch(84% 0.021 225.9)",
+          "oklch(95% 0.021 225.9)"
+        ]
+      },
+      "series-1": {
+        "role": "secondary",
+        "displayName": "Instrument Cyan",
+        "canonical": "oklch(63.9% 0.100 222.9)",
+        "daylight": "#0E7FA3",
+        "tonalRamp": [
+          "oklch(15% 0.100 222.9)",
+          "oklch(26% 0.100 222.9)",
+          "oklch(38% 0.100 222.9)",
+          "oklch(49% 0.100 222.9)",
+          "oklch(61% 0.100 222.9)",
+          "oklch(72% 0.100 222.9)",
+          "oklch(84% 0.100 222.9)",
+          "oklch(95% 0.100 222.9)"
+        ]
+      },
+      "series-2": {
+        "role": "secondary",
+        "displayName": "Oxide Sand",
+        "canonical": "oklch(65.5% 0.107 73.5)",
+        "daylight": "#A66A00",
+        "tonalRamp": [
+          "oklch(15% 0.107 73.5)",
+          "oklch(26% 0.107 73.5)",
+          "oklch(38% 0.107 73.5)",
+          "oklch(49% 0.107 73.5)",
+          "oklch(61% 0.107 73.5)",
+          "oklch(72% 0.107 73.5)",
+          "oklch(84% 0.107 73.5)",
+          "oklch(95% 0.107 73.5)"
+        ]
+      },
+      "series-3": {
+        "role": "secondary",
+        "displayName": "Instrument Magenta",
+        "canonical": "oklch(60.6% 0.156 350.5)",
+        "daylight": "#C2317F",
+        "tonalRamp": [
+          "oklch(15% 0.156 350.5)",
+          "oklch(26% 0.156 350.5)",
+          "oklch(38% 0.156 350.5)",
+          "oklch(49% 0.156 350.5)",
+          "oklch(61% 0.156 350.5)",
+          "oklch(72% 0.156 350.5)",
+          "oklch(84% 0.156 350.5)",
+          "oklch(95% 0.156 350.5)"
+        ]
+      },
+      "series-4": {
+        "role": "secondary",
+        "displayName": "Instrument Violet",
+        "canonical": "oklch(62.4% 0.166 293.7)",
+        "daylight": "#6D3FD6",
+        "tonalRamp": [
+          "oklch(15% 0.166 293.7)",
+          "oklch(26% 0.166 293.7)",
+          "oklch(38% 0.166 293.7)",
+          "oklch(49% 0.166 293.7)",
+          "oklch(61% 0.166 293.7)",
+          "oklch(72% 0.166 293.7)",
+          "oklch(84% 0.166 293.7)",
+          "oklch(95% 0.166 293.7)"
+        ]
+      },
+      "series-5": {
+        "role": "secondary",
+        "displayName": "Instrument Teal",
+        "canonical": "oklch(64.9% 0.102 184.1)",
+        "daylight": "#00897B",
+        "tonalRamp": [
+          "oklch(15% 0.102 184.1)",
+          "oklch(26% 0.102 184.1)",
+          "oklch(38% 0.102 184.1)",
+          "oklch(49% 0.102 184.1)",
+          "oklch(61% 0.102 184.1)",
+          "oklch(72% 0.102 184.1)",
+          "oklch(84% 0.102 184.1)",
+          "oklch(95% 0.102 184.1)"
+        ]
+      },
+      "series-6": {
+        "role": "secondary",
+        "displayName": "Instrument Blue",
+        "canonical": "oklch(54.5% 0.148 256.7)",
+        "daylight": "#1B62C9",
+        "tonalRamp": [
+          "oklch(15% 0.148 256.7)",
+          "oklch(26% 0.148 256.7)",
+          "oklch(38% 0.148 256.7)",
+          "oklch(49% 0.148 256.7)",
+          "oklch(61% 0.148 256.7)",
+          "oklch(72% 0.148 256.7)",
+          "oklch(84% 0.148 256.7)",
+          "oklch(95% 0.148 256.7)"
+        ]
+      },
+      "scale-from": {
+        "role": "secondary",
+        "displayName": "Scale Pale Cyan",
+        "canonical": "oklch(91.1% 0.027 223.2)",
+        "daylight": "#CFE6EF",
+        "tonalRamp": [
+          "oklch(15% 0.027 223.2)",
+          "oklch(26% 0.027 223.2)",
+          "oklch(38% 0.027 223.2)",
+          "oklch(49% 0.027 223.2)",
+          "oklch(61% 0.027 223.2)",
+          "oklch(72% 0.027 223.2)",
+          "oklch(84% 0.027 223.2)",
+          "oklch(95% 0.027 223.2)"
+        ]
+      },
+      "scale-to": {
+        "role": "secondary",
+        "displayName": "Scale Deep Cyan",
+        "canonical": "oklch(34.5% 0.061 228.0)",
+        "daylight": "#0B3F52",
+        "tonalRamp": [
+          "oklch(15% 0.061 228.0)",
+          "oklch(26% 0.061 228.0)",
+          "oklch(38% 0.061 228.0)",
+          "oklch(49% 0.061 228.0)",
+          "oklch(61% 0.061 228.0)",
+          "oklch(72% 0.061 228.0)",
+          "oklch(84% 0.061 228.0)",
+          "oklch(95% 0.061 228.0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Board Headline",
+        "purpose": "The status board's one headline on the index page. Exactly one per site; capped at 22ch with text-wrap: balance."
+      },
+      "headline": {
+        "displayName": "Station Designation",
+        "purpose": "Evidence's auto-rendered h1.title on the five deep pages, underlined with a rule-strong hairline and ticked with a 2.5rem caution segment. Hidden on the index via route-scoped CSS."
+      },
+      "title": {
+        "displayName": "Module Name",
+        "purpose": "A module's own name: channel names, the footer byline, the rail wordmark (0.9375rem / 700 / 0.02em)."
+      },
+      "body": {
+        "displayName": "Body Prose",
+        "purpose": "All running prose, capped at a 68ch measure. Panel's intro slot runs narrower at 62ch."
+      },
+      "body-small": {
+        "displayName": "In-Module Copy",
+        "purpose": "Explanatory copy inside a module: outcome plates, verify cells, coverage and dormant notes."
+      },
+      "placard": {
+        "displayName": "Engraved Placard",
+        "purpose": "The one repeated typographic gesture of the world. Every label on every well, module, step, table header and rail station. Never an eyebrow above a separate heading."
+      },
+      "placard-section": {
+        "displayName": "Section Placard",
+        "purpose": "Panel's own h2, cut into an engraved rule. Larger and more tracked than the everyday placard; that difference is the entire hierarchy signal."
+      },
+      "readout-lead": {
+        "displayName": "Lead Readout",
+        "purpose": "The board's headline figure, one per page at most. Drops to 2.25rem below 640px."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "The standard live value in a well. Channel counts run at 1.25rem, the last-run stamp at 1.125rem."
+      },
+      "data": {
+        "displayName": "Data Listing",
+        "purpose": "Every table, inline code span, search input and dbt test name. Tabular figures, always."
+      }
+    },
+    "fonts": [
+      {
+        "family": "Archivo",
+        "role": "display/body/placard",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "hosting": "self-hosted woff2, latin + latin-ext subsets, font-display: swap, declared in dashboard/static/fonts/fonts.css",
+        "preloaded": "Archivo-5.woff2 (600, latin)"
+      },
+      {
+        "family": "JetBrains Mono",
+        "role": "readout/data",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "hosting": "self-hosted woff2, latin + latin-ext subsets, font-display: swap, declared in dashboard/static/fonts/fonts.css",
+        "preloaded": "JetBrainsMono-1.woff2 (400, latin)"
+      }
+    ],
+    "shadows": [
+      {
+        "name": "well-bevel",
+        "value": "inset 0 1px 0 color-mix(in srgb, #000 40%, transparent)",
+        "purpose": "The top lip of a recessed well in the console register. The only shadow in the system, and it is inset \u2014 nothing in this world lifts off the page."
+      },
+      {
+        "name": "well-bevel-daylight",
+        "value": "inset 0 1px 2px color-mix(in srgb, #000 8%, transparent)",
+        "purpose": "The same lip in the daylight register, softened because a printed plot board does not cut as deep as machined metal."
+      },
+      {
+        "name": "elevation",
+        "value": "none",
+        "purpose": "There is no elevation shadow. Depth is four stepped ground values plus two rule weights. Do not add one."
+      }
+    ],
+    "textures": [
+      {
+        "name": "panel-machining",
+        "value": "repeating-linear-gradient(90deg, transparent 0 3px, color-mix(in srgb, var(--rule) 18%, transparent) 3px 4px)",
+        "purpose": "Faint vertical machining on the console face (.console-shell), at a 4px pitch. Texture, not a pattern anyone should consciously notice."
+      }
+    ],
+    "motion": [
+      {
+        "name": "power-on",
+        "value": "power-on 620ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "purpose": "The site's ONE authored moment: the status board arriving, 6px rise plus fade. Applied to .board on the index and nowhere else. Adding a second animation breaks the world."
+      },
+      {
+        "name": "ease-state",
+        "value": "140ms ease-out",
+        "purpose": "The only state transition, on color and border-color: rail stations, the register switch, the primary action, the footer repo plate. Never on transform."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce) \u2014 .power-on animation: none, plus a global clamp of every animation-duration and transition-duration to 0.01ms !important",
+        "purpose": "The reduced-motion contract. It is global, not per-component."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "grid-5to3",
+        "value": "1000px"
+      },
+      {
+        "name": "scale-5to3",
+        "value": "900px"
+      },
+      {
+        "name": "strip-4to2",
+        "value": "860px"
+      },
+      {
+        "name": "rail-collapse",
+        "value": "800px"
+      },
+      {
+        "name": "board-stack",
+        "value": "780px"
+      },
+      {
+        "name": "label-column-drop",
+        "value": "640px"
+      },
+      {
+        "name": "footer-path-hide",
+        "value": "560px"
+      },
+      {
+        "name": "single-column",
+        "value": "460px"
+      },
+      {
+        "name": "single-column-tight",
+        "value": "420px"
+      }
+    ],
+    "layout": {
+      "frame": "max-width: 78rem; margin-inline: auto; padding-inline: 1.5rem (1rem at the narrow breakpoints). Shared identically by the rail, the main content and the footer.",
+      "mainPadding": "padding-top: 2.5rem; padding-bottom: 6rem",
+      "sectionRhythm": "engraved rule margin-block: 3rem 1rem",
+      "seamGrid": "display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule) \u2014 children strip their own border, border-radius and box-shadow so the group reads as one machined plate subdivided.",
+      "measure": "68ch on .markdown p; 62ch on Panel's intro. A full-width paragraph row takes max-width: none on the plate and an inner span.measure at 68ch."
+    },
+    "buildInvariants": [
+      {
+        "name": "basePath",
+        "value": "deployment.basePath: /quantyx in evidence.config.yaml",
+        "note": "Required. Evidence 40 does NOT honour EVIDENCE_BASE_PATH; without the config value the GitHub Pages project site returns 200 and renders completely unstyled because every /_app/... request 404s."
+      },
+      {
+        "name": "themeAttribute",
+        "value": "html[data-theme='light']",
+        "note": "The only valid selector for the daylight register. Evidence sets this attribute and no class and no data-appearance. The rail's own .lamp-switch writes it, because Evidence's built-in switcher lives in the hidden header."
+      },
+      {
+        "name": "deterministicSort",
+        "value": "every ranked query carries a secondary sort key",
+        "note": "e.g. `order by posting_count desc, canonical_skill`. Without one, equal-count rows reorder between renders. Two independent renders of the same page are byte-identical by pixel hash after this fix."
+      },
+      {
+        "name": "directionContract",
+        "value": "injected via {@html} in pages/+layout.svelte",
+        "note": "Svelte strips ordinary HTML comments at compile time, so the contract is raw markup. It is the first HTML comment in every built page and must stay auditable in shipped output."
+      },
+      {
+        "name": "indexTitleSuppression",
+        "value": ":global(h1.title) { display: none } inside pages/index.md's own <style>",
+        "note": "Route-scoped on purpose. SvelteKit only loads a route's CSS for that route, which keeps h1.title visible on the five deep pages where it is the station designation. Never move this into console.css."
+      },
+      {
+        "name": "measuredSurface",
+        "value": "six pages, zero horizontal overflow at 1440px and at a true 390px viewport; body contrast 7.5:1 console / 7.4:1 daylight, placards 14-18:1, readouts 15:1; strict production build passes; impeccable detector returns []."
+      }
+    ],
+    "dataviz": {
+      "assignment": "Fixed slot order, never cycled. Slot 1 paints every single-series chart.",
+      "validation": "Validated with the dataviz validator against this world's real grounds (#101619 console panel / #e8ecee plot board), not a generic white. Every check passes in BOTH registers with no warnings: worst adjacent CVD dE 13.0 in both, worst adjacent normal-vision dE 15.5 console / 18.7 daylight.",
+      "slotOrderRationale": "Oxide sand sits between instrument cyan and magenta because those two collide at dE 2.5 under deuteranopia when adjacent. The order IS the CVD-safety mechanism. Do not reorder, insert, drop or resample without re-running the validator against both grounds.",
+      "slot1Rationale": "Slot 1 is a deep instrument cyan and deliberately NOT a blue. A saturated blue in slot 1 is the stock Evidence accent this world's thesis refuses; it made the Skills and Companies plots read as default charts wearing a console frame. Blue is demoted to slot 6, where six concurrent series must be on screen before it appears.",
+      "reserved": "Status hues (nominal green / caution amber / fault red) never appear as a chart series, and instrument-trace hues never appear on a lamp.",
+      "sequential": "One hue, light to dark, cyan to match the categorical lead. Identical in both registers. Never a rainbow.",
+      "surface": ".echarts-wrapper and .chart-container are forced transparent so plots sit in the panel rather than on a white sheet."
+    }
+  },
+  "components": [
+    {
+      "name": "Engraved Placard",
+      "kind": "custom",
+      "refersTo": "placard-label",
+      "description": "The world's one repeated typographic gesture: small tracked capitals cut into the panel. Labels every well, module, step and rail station.",
+      "html": "<span class=\"ds-placard\">Ingest channels</span>",
+      "css": ".ds-placard { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim, #9fb2b9); }"
+    },
+    {
+      "name": "Readout Well",
+      "kind": "custom",
+      "refersTo": "readout-well",
+      "description": "A single live quantity sunk into a recessed well: engraved label, tabular value, unit held apart, scale tick flush to the top edge. Add ds-lead for the board's headline figure (caution-coloured tick, 2.75rem/700).",
+      "html": "<div class=\"ds-readout-well ds-lead\"><span class=\"ds-placard-in\">Roles open now</span><span class=\"ds-value-row\"><span class=\"ds-value\">1,412</span><span class=\"ds-unit\">roles</span></span><span class=\"ds-note\">Currently listed across every channel</span></div>",
+      "css": ".ds-readout-well { position: relative; display: flex; flex-direction: column; gap: 0.4rem; padding: 0.875rem 1rem 1rem; background: var(--panel-inset, #0c1214); border: 1px solid var(--rule, #24343a); border-radius: 2px; box-shadow: inset 0 1px 0 rgba(0,0,0,0.4); } .ds-readout-well::before { content: ''; position: absolute; top: 0; left: 1rem; width: 1.75rem; height: 2px; background: var(--rule-strong, #354a52); } .ds-readout-well.ds-lead::before { background: var(--lamp-caution, #e8a33d); } .ds-placard-in { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim, #9fb2b9); } .ds-value-row { display: flex; align-items: baseline; gap: 0.4rem; } .ds-value { font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; font-size: 1.75rem; font-weight: 500; line-height: 1; color: var(--ink, #e6edef); } .ds-lead .ds-value { font-size: 2.75rem; font-weight: 700; } .ds-unit { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--ink-faint, #6e848c); } .ds-note { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; line-height: 1.45; color: var(--ink-faint, #6e848c); }"
+    },
+    {
+      "name": "Status Lamp",
+      "kind": "custom",
+      "refersTo": "placard-label",
+      "description": "The world's defining component. Three live states plus off, each carrying an engraved word AND a drawn glyph \u2014 colour is confirmation, never the message. The word is overridable (Live/Silent, Armed/Dormant, Published/Halted) but never absent.",
+      "html": "<span class=\"ds-lamp ds-lamp-nominal\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"6\" r=\"5\" stroke-width=\"1.5\"/><path d=\"M3.5 6.2 5.2 8 8.5 4.4\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word\">Nominal</span></span> <span class=\"ds-lamp ds-lamp-caution\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><path d=\"M6 1.2 11 10.5H1L6 1.2Z\" stroke-width=\"1.5\" stroke-linejoin=\"miter\"/><path d=\"M6 4.8v2.4M6 8.8v.5\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word\">Caution</span></span> <span class=\"ds-lamp ds-lamp-fault\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"6\" r=\"5\" stroke-width=\"1.5\"/><path d=\"M4 4l4 4M8 4l-4 4\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word\">Fault</span></span> <span class=\"ds-lamp\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"6\" r=\"5\" stroke-width=\"1.5\"/><path d=\"M3.4 6h5.2\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word\">No data</span></span>",
+      "css": ".ds-lamp { display: inline-flex; align-items: center; gap: 0.4rem; margin-right: 1rem; color: var(--lamp-off, #2c3a40); } .ds-lamp-nominal { color: var(--lamp-nominal, #46c08a); } .ds-lamp-caution { color: var(--lamp-caution, #e8a33d); } .ds-lamp-fault { color: var(--lamp-fault, #e8615a); } .ds-lamp svg { display: block; flex-shrink: 0; } .ds-lamp-word { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: currentColor; }"
+    },
+    {
+      "name": "Module with Engraved Rule",
+      "kind": "card",
+      "refersTo": "module",
+      "description": "A section of the console face: engraved placard cut into a hairline rule that fades to nothing, an optional right-aligned readout annotation, then a module bolted into the face. There are no cards in this system \u2014 only modules and wells.",
+      "html": "<section><div class=\"ds-engraved-rule\"><h2 class=\"ds-rule-label\">Market activity</h2><span class=\"ds-rule-annotation\">14 day(s) recorded</span></div><div class=\"ds-module\"><p class=\"ds-module-body\">Roles open on each day the pipeline has run, and the roles it had never seen before.</p></div></section>",
+      "css": ".ds-engraved-rule { display: flex; align-items: center; gap: 0.875rem; margin-block: 1.5rem 1rem; } .ds-engraved-rule::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--rule-strong, #354a52), transparent); } .ds-rule-label { margin: 0; font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink, #e6edef); } .ds-rule-annotation { order: 3; flex-shrink: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.6875rem; color: var(--ink-faint, #6e848c); } .ds-module { background: var(--panel-raised, #172024); border: 1px solid var(--rule, #24343a); border-radius: 2px; padding: 0.875rem 1.125rem; } .ds-module-body { margin: 0; max-width: 68ch; font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.7; color: var(--ink-dim, #9fb2b9); }"
+    },
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "The board's single primary action \u2014 the repository link. A caution-bordered plate on a transparent ground that fills on hover; the arrow is pushed to the far edge. No lift, no scale, no shadow.",
+      "html": "<a class=\"ds-action\" href=\"#\">Read the source <span aria-hidden=\"true\">&rarr;</span></a>",
+      "css": ".ds-action { display: inline-flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 1rem; border: 1px solid var(--lamp-caution, #e8a33d); border-radius: 2px; background: transparent; color: var(--ink, #e6edef); font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 140ms ease-out, color 140ms ease-out; } .ds-action:hover { background: var(--lamp-caution, #e8a33d); color: var(--panel-void, #0a0f11); } .ds-action:focus-visible { outline: 2px solid var(--lamp-caution, #e8a33d); outline-offset: 2px; border-radius: 2px; }"
+    },
+    {
+      "name": "Rail Station",
+      "kind": "nav",
+      "refersTo": "station",
+      "description": "A navigation station in the sticky console rail. The active station is engraved \u2014 inset ground plus a strong rule border \u2014 never merely tinted, because identity in this world never rests on colour alone.",
+      "html": "<nav class=\"ds-rail\" aria-label=\"Console stations\"><a class=\"ds-station\" href=\"#\">Status</a><a class=\"ds-station ds-station-active\" href=\"#\" aria-current=\"page\">Skills</a><a class=\"ds-station\" href=\"#\">Compensation</a><a class=\"ds-station\" href=\"#\">Method</a></nav>",
+      "css": ".ds-rail { display: flex; align-items: center; gap: 0.25rem; background: var(--panel-inset, #0c1214); border-bottom: 1px solid var(--rule-strong, #354a52); padding: 0.6rem 1rem; } .ds-station { padding: 0.4rem 0.7rem; border: 1px solid transparent; border-radius: 2px; color: var(--ink-faint, #6e848c); text-decoration: none; font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; transition: color 140ms ease-out, border-color 140ms ease-out; } .ds-station:hover { color: var(--ink, #e6edef); border-color: var(--rule, #24343a); } .ds-station-active { color: var(--ink, #e6edef); border-color: var(--rule-strong, #354a52); background: var(--panel-inset, #0c1214); } .ds-station:focus-visible { outline: 2px solid var(--lamp-caution, #e8a33d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Channel Strip",
+      "kind": "custom",
+      "refersTo": "channel-cell",
+      "description": "The four ingest channels in a 1px seam grid, each individually lamped. Channels are declared, not derived, so a source that reported nothing still renders \u2014 as a Silent off-lamp with a count of 0. A source disappearing must be visible as an absence.",
+      "html": "<div class=\"ds-strip\" role=\"list\"><div class=\"ds-channel\" role=\"listitem\"><div class=\"ds-channel-head\"><span class=\"ds-channel-name\">Adzuna</span><span class=\"ds-lamp ds-lamp-nominal\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"6\" r=\"5\" stroke-width=\"1.5\"/><path d=\"M3.5 6.2 5.2 8 8.5 4.4\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word ds-compact\">Live</span></span></div><div class=\"ds-channel-count\">612</div><div class=\"ds-channel-detail\">India market &middot; keyed API</div></div><div class=\"ds-channel\" role=\"listitem\"><div class=\"ds-channel-head\"><span class=\"ds-channel-name\">Lever</span><span class=\"ds-lamp\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"6\" r=\"5\" stroke-width=\"1.5\"/><path d=\"M3.4 6h5.2\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word ds-compact\">Silent</span></span></div><div class=\"ds-channel-count\">0</div><div class=\"ds-channel-detail\">Company boards &middot; no auth</div></div></div>",
+      "css": ".ds-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule, #24343a); border: 1px solid var(--rule, #24343a); border-radius: 2px; overflow: hidden; } .ds-channel { background: var(--panel-raised, #172024); padding: 0.875rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; } .ds-channel-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; } .ds-channel-name { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.8125rem; font-weight: 600; color: var(--ink, #e6edef); } .ds-channel-count { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; font-size: 1.25rem; font-weight: 500; line-height: 1; color: var(--ink, #e6edef); } .ds-channel-detail { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; line-height: 1.4; color: var(--ink-faint, #6e848c); } .ds-lamp { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--lamp-off, #2c3a40); } .ds-lamp-nominal { color: var(--lamp-nominal, #46c08a); } .ds-lamp-word { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: currentColor; } .ds-compact { font-size: 0.625rem; }"
+    },
+    {
+      "name": "Caution Plate",
+      "kind": "custom",
+      "refersTo": "caution-plate",
+      "description": "How this world states a limit: a plate with its left border swapped to caution amber, not a decorative quote bar. Every markdown blockquote on the site renders as one. Caveats are furniture here, not fine print.",
+      "html": "<div class=\"ds-caution-plate\"><span class=\"ds-lamp ds-lamp-caution\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><path d=\"M6 1.2 11 10.5H1L6 1.2Z\" stroke-width=\"1.5\" stroke-linejoin=\"miter\"/><path d=\"M6 4.8v2.4M6 8.8v.5\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg><span class=\"ds-lamp-word\">Read this first</span></span><p>An intern stipend quoted in INR per month and a staff salary quoted in USD per year are not the same kind of number. Each currency-and-period combination is reported as its own distribution, on its own axis.</p></div>",
+      "css": ".ds-caution-plate { display: grid; grid-template-columns: 11rem 1fr; gap: 1.25rem; align-items: start; padding: 1rem 1.25rem; background: var(--panel-inset, #0c1214); border: 1px solid var(--rule, #24343a); border-left: 1px solid var(--lamp-caution, #e8a33d); border-radius: 2px; } .ds-caution-plate p { margin: 0; max-width: 68ch; font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.7; color: var(--ink-dim, #9fb2b9); } .ds-lamp { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--lamp-caution, #e8a33d); } .ds-lamp-word { font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: currentColor; } @media (max-width: 640px) { .ds-caution-plate { grid-template-columns: 1fr; gap: 0.625rem; } }"
+    },
+    {
+      "name": "Console Search Input",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Evidence's DataTable search field rebuilt as a console control: recessed ground, strong rule border, mono text. Focus is a caution lamp at 1px offset and the border stays.",
+      "html": "<input class=\"ds-input-search\" type=\"search\" placeholder=\"Search by role, company or location\" aria-label=\"Search postings\" />",
+      "css": ".ds-input-search { width: 100%; max-width: 22rem; padding: 0.45rem 0.7rem; background: var(--panel-inset, #0c1214); border: 1px solid var(--rule-strong, #354a52); border-radius: 2px; color: var(--ink, #e6edef); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.8125rem; } .ds-input-search::placeholder { color: var(--ink-faint, #6e848c); } .ds-input-search:focus { outline: 2px solid var(--lamp-caution, #e8a33d); outline-offset: 1px; border-color: var(--rule-strong, #354a52); }"
+    },
+    {
+      "name": "Data Listing Table",
+      "kind": "custom",
+      "refersTo": "table-header-cell",
+      "description": "Tables read as printed data listings: placard-set headers over a strong rule, left-aligned mono cells with tabular figures, hairline row dividers and a recessed row hover. Markdown tables and Evidence DataTables are forced to the same listing so they agree on a shared page.",
+      "html": "<table class=\"ds-listing\"><thead><tr><th>Skill</th><th>Category</th><th>Roles</th></tr></thead><tbody><tr><td>Python</td><td>Language</td><td>412</td></tr><tr><td>SQL</td><td>Language</td><td>388</td></tr><tr><td>dbt</td><td>Tooling</td><td>96</td></tr></tbody></table>",
+      "css": ".ds-listing { width: 100%; border-collapse: collapse; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.8125rem; font-variant-numeric: tabular-nums; } .ds-listing th, .ds-listing td { text-align: left; padding: 0.55rem 0.875rem; border-bottom: 1px solid var(--rule, #24343a); } .ds-listing thead th { border-bottom: 1px solid var(--rule-strong, #354a52); font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim, #9fb2b9); } .ds-listing td { color: var(--ink, #e6edef); } .ds-listing tbody tr:hover { background: var(--panel-inset, #0c1214); } .ds-listing tbody tr:last-child td { border-bottom: 0; }"
+    },
+    {
+      "name": "Station Designation",
+      "kind": "custom",
+      "refersTo": "module",
+      "description": "Evidence auto-renders each page's frontmatter title into h1.title. On the five deep pages that becomes the station designation: engraved into a strong rule with a short caution tick at its left edge, the way a console labels a panel. Suppressed on the index only, via route-scoped CSS.",
+      "html": "<h1 class=\"ds-designation\">Skills in demand</h1>",
+      "css": ".ds-designation { position: relative; margin: 0 0 1.75rem; padding-bottom: 0.875rem; font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; color: var(--ink, #e6edef); border-bottom: 1px solid var(--rule-strong, #354a52); } .ds-designation::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 2.5rem; height: 1px; background: var(--lamp-caution, #e8a33d); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Unattended Console",
+    "overview": "This is not a dashboard. It is the face of an instrument that ran at 02:30 UTC without a human present, and the single most important thing it has to say is that it is willing to refuse to publish. Every visual decision serves that reading. The surface is a matte console panel machined with faint vertical rules; modules are bolted into its face; live values are sunk into recessed wells; labels are engraved placard capitals cut into hairline rules. Numbers are set in a tabular monospace because a readout is a different kind of object from a sentence, and the two never wear each other's clothes.\n\nThe world refuses two opposites at once. It refuses the SaaS-card arrangement Evidence ships by default \u2014 sidebar, rounded cards, Inter, a saturated blue accent \u2014 which is why the shell hides Evidence's entire chrome and rebuilds the rail, the footer and the type from scratch. It equally refuses the terminal cliche that a \"console\" invites: there are no scanlines, no glow, no green-on-black, no ASCII art, no blinking cursors. Depth comes from three stepped ground values and hairline rules, never from a drop shadow.\n\nDensity is high and deliberately unpadded \u2014 this is an operations panel, not a marketing page \u2014 but the prose inside it stays at a 68-character measure and reads plainly. The product's voice (\"hedges and caveats are content, not clutter to be designed away\") is load-bearing on the visual system: caution plates, dormant lamps and \"what these numbers do not say\" modules are first-class furniture with real estate, not fine print.",
+    "keyCharacteristics": [
+      "Matte console panel with faint vertical machining, three stepped grounds, zero shadows for elevation",
+      "Engraved placard capitals (Archivo 600, tracked 0.14em) against tabular readouts (JetBrains Mono)",
+      "A single 2px radius everywhere; the corner is a machined chamfer, not a rounded card",
+      "Status lamps in exactly three states, reserved for state, never used decoratively or as chart color",
+      "Modules separated by 1px seams of rule color, not by gaps",
+      "One authored motion moment on the whole site"
+    ],
+    "rules": [
+      {
+        "name": "The Reserved Lamp Rule",
+        "section": "colors",
+        "body": "The three status hues exist only to report machine state. They are never a chart series, never a decorative highlight, never a brand gradient. And a lamp never carries meaning in colour alone: StatusLamp always ships an engraved word AND a drawn SVG glyph. Colour is confirmation, not the message."
+      },
+      {
+        "name": "The Slot Order Rule",
+        "section": "colors",
+        "body": "The categorical palette's slot order is a CVD-safety mechanism, not taste. Oxide sand sits between instrument cyan and magenta because those two collide at dE 2.5 under deuteranopia when adjacent. Validated against this world's actual surfaces in both registers with no warnings. Do not reorder, insert, drop or resample a slot without re-running the validator against both grounds."
+      },
+      {
+        "name": "The No Stock Blue Rule",
+        "section": "colors",
+        "body": "Slot 1 is a deep instrument cyan and deliberately not a blue. Slot 1 paints every single-series chart on the site, and a saturated blue there is exactly the stock accent this world's thesis refuses. Blue is demoted to slot 6, where six concurrent series would have to be on screen before it appears."
+      },
+      {
+        "name": "The One-Hue Scale Rule",
+        "section": "colors",
+        "body": "The sequential scale is one hue, light to dark, cyan to match the categorical ramp's lead. It is identical in both registers. Never a rainbow, never a diverging ramp for non-diverging data."
+      },
+      {
+        "name": "The data-theme Rule",
+        "section": "colors",
+        "body": "Light mode is selected on html[data-theme='light'] and nothing else. Evidence sets that attribute and sets no class and no data-appearance; targeting anything else makes the entire daylight register dead code that no switcher can ever reach. The rail's own switch sets the attribute directly, because Evidence's built-in switcher lives in the header this shell hides."
+      },
+      {
+        "name": "The Two Voices Rule",
+        "section": "typography",
+        "body": "Archivo says what a thing is; JetBrains Mono says how much there is. A number never appears in Archivo, prose never appears in mono, and there is no third face."
+      },
+      {
+        "name": "The Placard-Is-The-Label Rule",
+        "section": "typography",
+        "body": "A placard is the section's own label, never an eyebrow stacked above a separate heading. Panel renders its label as the h2; if you find yourself writing a placard and a heading that say the same thing, delete the heading."
+      },
+      {
+        "name": "The Engraved Identity Rule",
+        "section": "typography",
+        "body": "Nothing identifies itself by colour alone. The active station gets an inset ground and a strong rule border, not a tint. The station designation gets a rule and a tick."
+      },
+      {
+        "name": "The Measure Rule",
+        "section": "layout",
+        "body": "Every paragraph caps at 68ch. When a paragraph is itself a full-width module row with its own background, the plate must span the module (max-width: none) while an inner span.measure keeps the text at 68ch. Two different jobs: uncapping the paragraph alone produces 100-character lines; leaving the cap on ends the row's background mid-module and leaks the container's rule colour through as a phantom cell."
+      },
+      {
+        "name": "The Seam Rule",
+        "section": "layout",
+        "body": "Related modules are separated by a 1px seam of rule colour, never by whitespace and never by a shadow. If two things need to look like part of the same instrument, put them in a seam grid."
+      },
+      {
+        "name": "The Shared Measure Rule",
+        "section": "layout",
+        "body": "Rail, content and footer all sit at 78rem with the same 1.5rem gutter. A new full-width band must adopt both or it will visibly disagree with everything above it."
+      },
+      {
+        "name": "The Three Grounds Rule",
+        "section": "elevation",
+        "body": "The daylight register's ground values are stepped further apart than a naive light theme would space them, because the whole 'a module bolted into the console face' reading is carried by that separation. In an earlier tighter light palette the module boundary collapsed to a single 1px rule and the depth story disappeared."
+      },
+      {
+        "name": "The No-Lift Rule",
+        "section": "elevation",
+        "body": "Nothing hovers. If something needs to feel prominent, change its ground, its rule weight or its tick colour. Never add a drop shadow, and never add transform: translateY() on hover."
+      },
+      {
+        "name": "The Square Cap Rule",
+        "section": "shapes",
+        "body": "Icon strokes end square, not round. A rounded cap softens the instrument and none of the glyphs in the system use one, except the mode-switch crescent, which needs a round join."
+      }
+    ],
+    "dos": [
+      "Do keep deployment.basePath: /quantyx in evidence.config.yaml. Evidence 40 does NOT honour the EVIDENCE_BASE_PATH environment variable; without the config value the GitHub Pages project site returns 200 and renders completely unstyled, because every /_app/... request 404s. Any asset URL you add must go through base from $app/paths for the same reason.",
+      "Do select the daylight register on html[data-theme='light'] and nowhere else, and keep the rail's lamp-switch as the way a visitor reaches it \u2014 Evidence's own switcher is in the header this shell hides.",
+      "Do give every ranked query a deterministic secondary sort key. Without one, equal-count rows reorder between renders; on a site whose entire thesis is deterministic publishing, that is a correctness defect, not a cosmetic one. Two independent renders of the same page are byte-identical by pixel hash after this fix \u2014 keep it that way.",
+      "Do hide h1.title with route-scoped CSS on the index only. Evidence auto-renders the frontmatter title into h1.title; on the index the board carries its own headline, so the heading is suppressed inside index.md's own style block. SvelteKit only loads a route's CSS for that route, which is what keeps it off the five deep pages where h1.title is the real station designation. Never move that rule into console.css.",
+      "Do give a full-width paragraph row max-width: none on the plate and an inner span.measure at 68ch for the text.",
+      "Do ship a word and a glyph with every lamp, and re-run the dataviz validator against both grounds before touching the categorical palette.",
+      "Do put new module groups in a 1px seam grid over rule, and strip the child's own border/radius/shadow.",
+      "Do state a limit as furniture \u2014 a caution plate, a lamp, a dormant note \u2014 rather than as small grey text at the bottom."
+    ],
+    "donts": [
+      "Don't add a second animation. Motion is exactly one authored moment: a 620ms cubic-bezier(0.16, 1, 0.3, 1) power-on applied to .board on the index and nowhere else, disabled under prefers-reduced-motion \u2014 which additionally clamps every animation and transition on the site to 0.01ms. State changes get a 140ms ease-out colour/border transition; that is the whole vocabulary.",
+      "Don't reorder, resample or extend the categorical palette without re-running the validator. Oxide sand is between cyan and magenta for a reason.",
+      "Don't put a status hue on a chart series, and don't put an instrument-trace hue on a lamp.",
+      "Don't make slot 1 a blue. Blue is slot 6 and the demotion is the point.",
+      "Don't add a drop shadow, a hover lift, a gradient fill or a radius above 2px.",
+      "Don't un-hide Evidence's sidebar, header, breadcrumbs, TOC or 'Built with Evidence' badge, and don't reintroduce Inter \u2014 the shell's job is to prevent the default SaaS-card arrangement from reasserting itself.",
+      "Don't reach for the terminal cliche the word 'console' invites: no scanlines, no CRT glow, no green-on-black, no monospace prose, no blinking cursor, no ASCII borders.",
+      "Don't remove the direction contract from pages/+layout.svelte. It is injected as raw markup via {@html} specifically because Svelte strips ordinary HTML comments at compile time; it is the first HTML comment in every built page and is meant to stay auditable in the shipped output.",
+      "Don't use a placard as an eyebrow above a separate heading, and don't set a number in Archivo or a sentence in JetBrains Mono."
+    ],
+    "groundTruthNotes": [
+      "Two inline annotations in dashboard/static/console.css name the wrong ground: --ink-dim is commented '4.9:1 on --panel' (dark) and '7.1:1 on --panel' (light). Recomputed, --ink-dim is ~8.1:1 on --panel in the console register and ~6.2:1 on --panel in daylight; the measured 7.5:1 / 7.4:1 body figures are against --panel-raised, which is where body prose actually sits. The comments understate and misattribute.",
+      "TheGate.svelte is named for a GO/NO-GO verdict and the direction contract describes one, but the built component deliberately does not render a live verdict \u2014 a build that fails the gate never reaches a browser, so lamps that could only ever read GO would be decoration. It shows which checks are armed plus both outcomes as a worked example. The only genuinely conditional lamp is the volume check, which reads caution/Dormant until seven days of history exist.",
+      "The direction contract states the LAST RUN readout sits on the rail; in the built surface the rail carries only the designation, register switch and stations, and the LAST RUN readout lives in the status board's state well immediately below.",
+      "The contract embedded in pages/+layout.svelte carries one line the brief's copy does not: 'FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.'",
+      "dashboard/app.css is imported by pages/+layout.svelte but does not exist in source; it resolves against Evidence's generated template at dashboard/.evidence/template/src/app.css at build time.",
+      "evidence.config.yaml theme.colors.base.light is #e8ecee, a shade lighter than --panel light (#e8ecee). That value is Evidence's own chart ground and the ground the dataviz validator was run against; the console face in daylight is the darker one."
+    ]
+  }
+}

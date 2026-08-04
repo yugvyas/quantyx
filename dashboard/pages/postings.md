@@ -1,6 +1,6 @@
 ---
 title: Postings
-description: Every posting the pipeline has tracked, searchable.
+description: Every role the pipeline has tracked, searchable.
 ---
 
 ```sql postings
@@ -18,8 +18,7 @@ select
     comp_currency,
     comp_min,
     comp_max,
-    comp_period,
-    url
+    comp_period
 from quantyx.postings
 order by first_seen_date desc, company
 ```
@@ -33,14 +32,20 @@ select
 from quantyx.postings
 ```
 
-<BigValue data={counts} value=total title="Total tracked"/>
-<BigValue data={counts} value=open_now title="Open now"/>
-<BigValue data={counts} value=india title="India-located"/>
-<BigValue data={counts} value=with_pay title="With advertised pay"/>
+<div class="tallies">
+  <Readout label="Tracked to date" value={counts[0].total} lead={true}/>
+  <Readout label="Open now" value={counts[0].open_now}/>
+  <Readout label="India-located" value={counts[0].india}/>
+  <Readout label="Advertising pay" value={counts[0].with_pay}/>
+</div>
 
-Search by title, company or location. `days_open` counts from the first day
-the pipeline saw the posting, so it is a lower bound for roles that were
-already live before tracking began.
+Search by role, company or location. Two things worth knowing before you read
+the columns: `days_open` counts from the first day this pipeline saw the
+posting, not from when it was published, so it is a lower bound for anything
+already live before tracking began — and a role advertised in three cities
+appears three times, because each is a separate requisition.
+
+<Panel label="All roles" annotation="{counts[0].total} rows">
 
 <DataTable data={postings} search=true rows=25>
     <Column id=title title="Role"/>
@@ -51,5 +56,37 @@ already live before tracking began.
     <Column id=status title="Status"/>
     <Column id=days_open title="Days open"/>
     <Column id=first_seen_date title="First seen"/>
-    <Column id=source title="Source"/>
+    <Column id=source title="Channel"/>
 </DataTable>
+
+</Panel>
+
+<style>
+  .tallies {
+    display: grid;
+    grid-template-columns: 1.3fr repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    margin-bottom: 1.75rem;
+  }
+
+  .tallies :global(.readout-well) {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  @media (max-width: 860px) {
+    .tallies {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 420px) {
+    .tallies {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
