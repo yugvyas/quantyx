@@ -12,24 +12,24 @@ the dashboard can be recomputed by anyone who clones it.
 
 <!-- STATS:START -->
 
-**4,645** unique postings · **41,608** total observations · **41** days of history · **1,320** companies · **4** sources
+**4,722** unique postings · **42,612** total observations · **42** days of history · **1,340** companies · **4** sources
 
 | Metric | Value |
 | --- | --- |
-| Unique postings | 4,645 |
-| Total observations | 41,608 |
-| Days of history | 41 |
-| Date range | 2026-08-03 → 2026-09-12 |
-| Currently open | 1,024 |
-| Companies tracked | 1,320 |
-| Skill tags applied | 13,902 |
+| Unique postings | 4,722 |
+| Total observations | 42,612 |
+| Days of history | 42 |
+| Date range | 2026-08-03 → 2026-09-13 |
+| Currently open | 1,004 |
+| Companies tracked | 1,340 |
+| Skill tags applied | 14,098 |
 | Distinct skills seen | 109 |
-| India-located postings | 3,822 |
-| Remote postings | 424 |
-| With advertised pay | 311 |
-| Intern / new-grad / junior | 123 |
+| India-located postings | 3,898 |
+| Remote postings | 431 |
+| With advertised pay | 314 |
+| Intern / new-grad / junior | 125 |
 
-_Regenerated automatically on every pipeline run (last: 2026-09-12)._
+_Regenerated automatically on every pipeline run (last: 2026-09-13)._
 
 <!-- STATS:END -->
 
